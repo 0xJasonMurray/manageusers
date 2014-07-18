@@ -3,6 +3,11 @@ Overview
 Puppet module to manage users, groups, and ssh keys.
 
 
+Installation
+------------------
+Copy the entire manageusers contents into the /pathToPuppetConfig/modules directory.
+
+
 Use
 -------
 Edit the /pathToPuppetConfig/modules/manageusers/manifests/init.pp and add user accounts (similar to this):
