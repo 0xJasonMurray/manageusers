@@ -1,6 +1,6 @@
 Overview
 --------------
-Puppet module to manage user accounts.
+Puppet module to manage users, groups, and ssh keys.
 
 
 Use
