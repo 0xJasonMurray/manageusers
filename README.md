@@ -5,7 +5,10 @@ Puppet module to manage users, groups, and ssh keys.
 
 Installation
 ------------------
-Copy the entire manageusers contents into the /pathToPuppetConfig/modules directory.
+Copy the entire manageusers contents into the /pathToPuppetConfig/modules directory (example):
+
+    cd /etc/puppet/modules
+    git clone git@github.com:duxklr/manageusers.git
 
 
 Use
