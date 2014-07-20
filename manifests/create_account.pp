@@ -18,7 +18,7 @@ define manageusers::create_account ( $name, $uid, $password, $shell, $groups, $s
     managehome  => 'true',
     password    => "$password",
     groups      => $groups,
-    require     =>  Group[$title],
+    require     => Group[$title],
   }
 
   group { $username:
