@@ -44,5 +44,19 @@ class manageusers::add_accounts() {
     sshkey     => "MyKeyWouldGoHere"
   }
 
+  ##
+  ## Example of how to install on a single system
+  ##
+  if $fqdn == "ubuntu1404.example.com" {
+    manageusers::create_account { user8:
+      name       => "Single System",
+      uid        => "708",
+      password   => '$1$abcedfghijklmnopqrstuvwxyz',
+      shell      => "/bin/bash",
+      groups     => ['sudo', 'user8'],
+      sshkeytype => "ssh-dss",
+      sshkey     => "MyKeyWouldGoHere"
+    }
+  }
 
 }
