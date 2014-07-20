@@ -6,7 +6,7 @@
   "manifests/init.pp": "2a8f40856adf229cd55404e7c13379b3",
   "manifests/os-specific.pp": "6b5172e91b43a9b39afa09bf7e2afa88",
   "manifests/remove_accounts.pp": "b3910d4147eed68882c9c3c44ff23cc8",
-  "metadata.json": "71ac2ceb6c1e104b79e84298751861fc",
+  "metadata.json": "12ef76897b615216c927f5e264fbd114",
   "spec/spec_helper.rb": "a55d1e6483344f8ec6963fcb2c220372",
   "tests/init.pp": "89bf3e7ac7fd755ba174651e67d865aa"
 }
