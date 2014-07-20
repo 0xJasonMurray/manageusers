@@ -10,6 +10,10 @@ Copy the entire manageusers contents into the /pathToPuppetConfig/modules direct
     cd /etc/puppet/modules
     git clone git@github.com:duxklr/manageusers.git
 
+    or
+
+    puppet module install duxklr-manageusers
+
 
 Use
 -------
