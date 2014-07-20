@@ -7,5 +7,11 @@
   "source": "https://github.com/duxklr/manageusers",
   "project_page": "(https://github.com/duxklr/manageusers)",
   "tags": ["users", "ssh", "groups"],
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_range": ">= 1.0.0"
+    }
+  ]
 }
 
