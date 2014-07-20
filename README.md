@@ -1,23 +1,65 @@
-Overview
---------------
-Puppet module to manage users, groups, and ssh keys.
+# manageusers
+
+#### Table of Contents
+
+1. [Overview](#overview)
+2. [Description](#description)
+3. [Installation](#installation)
+    * [Using Native Puppet Commands](#using-puppet)
+    * [Manually Using GIT](#using-git)
+4. [Usage](#usage)
+    * [Adding Users](#adding-users)
+    * [Removing Users](#removing-users)
+    * [Start the System](#main)
+5. [Limitations - OS compatibility, etc.](#limitations)
+6. [Development - Guide for contributing to the module](#development)
 
 
-Installation
-------------------
-Copy the entire manageusers contents into the /pathToPuppetConfig/modules directory (example):
+
+
+## Overview
+
+Puppet module to manage users, groups, and ssh keys on a group of systems that
+all share a common user base.
+
+
+## Description
+
+This module is designed to be a simple system to manage a common set of
+usernames, UIDs, GIDs, passwords, groups and ssh keys across common set of
+servers.  The primary motivations behind this module are:
+
+  * Single point of account management
+  * No single point of failure like some SSO systems may introduce
+  * user, group(s), and ssh keys are ALL required for account creation
+  * Simple syntax that is easy to learn and easy to use
+  * No external module dependencies
+
+
+## Installation
+
+Copy the module into your /etc/puppet/modules directory.
+
+### Using Puppet (Native Command)
+
+    puppet module install duxklr-manageusers
+
+### Using GIT
 
     cd /etc/puppet/modules
     git clone git@github.com:duxklr/manageusers.git
 
-    or
 
-    puppet module install duxklr-manageusers
+## Usage
+
+All user account configuration is stored in one of two files.  The entire
+system is then called from the main site.pp.   Examples:
 
 
-Use
--------
-Edit the /pathToPuppetConfig/modules/manageusers/manifests/add_accounts.pp to add user accounts (similar to this):
+### Adding Users
+
+Edit the /pathToPuppetConfig/modules/manageusers/manifests/add_accounts.pp to
+add user accounts (similar to this):
 
     manageusers::create_account { user1:
         name       => "John Smith",
@@ -30,11 +72,17 @@ Edit the /pathToPuppetConfig/modules/manageusers/manifests/add_accounts.pp to ad
     }
 
 
+### Removing Users
+
 Edit the /pathToPuppetConfig/modules/manageusers/manifests/remove_accounts.pp to remove user accounts (similar to this):
 
 	user { user3:
 		ensure => "absent"
 	}
+
+### Main Call
+
+Once the user information is added.  Call the main system.  
 
 Edit the /pathToPuppetConfig/manifests/site.pp and call the manageusers module (similar to this):
 
@@ -43,4 +91,12 @@ Edit the /pathToPuppetConfig/manifests/site.pp and call the manageusers module (
     }
 
 
+## Limitations
+
+Tested and known to work with Ubuntu (10.x, 12.x, 14.x) and RedHat (5.x, 6.x).
+
+
+## Development
+
+Comments, suggestions, and code can be found here: https://github.com/duxklr/manageusers
 
