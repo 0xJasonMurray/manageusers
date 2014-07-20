@@ -1,7 +1,7 @@
 ##
 ## Define the function to take care of adding the users
 ##
-define manageusers::add_user ( $name, $uid, $password, $shell, $groups, $sshkeytype, $sshkey) {
+define manageusers::create_account ( $name, $uid, $password, $shell, $groups, $sshkeytype, $sshkey) {
 
   $homedir = $operatingsystem ? {
     'Solaris'   => '/export/home',
@@ -17,11 +17,12 @@ define manageusers::add_user ( $name, $uid, $password, $shell, $groups, $sshkeyt
     gid	        => $uid,
     managehome  => 'true',
     password    => "$password",
-    groups      => $groups
+    groups      => $groups,
+    require     =>  Group[$title],
   }
 
   group { $username:
-    gid         => "$uid"
+    gid         => "$uid",
   }
 
   ssh_authorized_key{ $username: 
@@ -29,7 +30,8 @@ define manageusers::add_user ( $name, $uid, $password, $shell, $groups, $sshkeyt
     ensure      =>  present, 
     type        => "$sshkeytype", 
     key         => "$sshkey", 
-    name        => "$username" 
+    name        => "$username" ,
+    require     => User[$title],
   } 
 }
 
