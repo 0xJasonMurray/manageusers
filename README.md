@@ -10,7 +10,7 @@
 4. [Usage](#usage)
     * [Adding Users](#adding-users)
     * [Removing Users](#removing-users)
-    * [Start the System](#main)
+    * [Start the System](#main-call)
 5. [Limitations - OS compatibility, etc.](#limitations)
 6. [Development - Guide for contributing to the module](#development)
 
