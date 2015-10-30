@@ -63,7 +63,7 @@ add user accounts (similar to this):
 
     # Example adding an account to all systems
     manageusers::create_account { user1:
-        name       => "John Smith",
+        realname   => "John Smith",
         uid        => "700",
         password   => '$1$abcedfghijklmnopqrstuvwxyz',
         shell      => "/bin/bash",
@@ -75,7 +75,7 @@ add user accounts (similar to this):
     ## Example adding an account to a single system
     if $fqdn == "ubuntu1404.example.com" {
       manageusers::create_account { user8:
-        name       => "Single System",
+        realname   => "Single System",
         uid        => "708",
         password   => '$1$abcedfghijklmnopqrstuvwxyz',
         shell      => "/bin/bash",
