@@ -1,7 +1,7 @@
 ##
 ## Define the function to take care of adding the users
 ##
-define manageusers::create_account ( $name, $uid, $password, $shell, $groups, $sshkeytype = '', $sshkey = '') {
+define manageusers::create_account ( $realname, $uid, $password, $shell, $groups, $sshkeytype = '', $sshkey = '') {
 
   $homedir = $operatingsystem ? {
     'Solaris'   => '/export/home',
@@ -10,7 +10,7 @@ define manageusers::create_account ( $name, $uid, $password, $shell, $groups, $s
 
   $username = $title
   user { $username:
-    comment     => "$name",
+    comment     => "$realname",
     home        => "$homedir/$username",
     shell       => "$shell",
     uid         => $uid,
