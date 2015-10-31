@@ -1,0 +1,12 @@
+{
+  "README.md": "cd169100fbee0d33878309a53705d15e",
+  "Rakefile": "20b80e526e351a74df2001f504e756d2",
+  "manifests/add_accounts.pp": "b888e0f3fe257b58529fe0ebd30e2ac2",
+  "manifests/create_account.pp": "1ca52889e5a1243953fd721467aa07f9",
+  "manifests/init.pp": "f250f39dd4aa391bb283f77e1995f206",
+  "manifests/osSpecific.pp": "65a02699f0f45943d0640fe427be6c05",
+  "manifests/remove_accounts.pp": "b2ac4dd0cf37e22f03e672d0658479a3",
+  "metadata.json": "e582cb769beee30702995ce96cb8eb86",
+  "spec/spec_helper.rb": "a55d1e6483344f8ec6963fcb2c220372",
+  "tests/init.pp": "89bf3e7ac7fd755ba174651e67d865aa"
+}
