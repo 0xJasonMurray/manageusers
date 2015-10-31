@@ -1,3 +1,4 @@
+# remove_accounts
 class manageusers::remove_accounts() {
 
   ##

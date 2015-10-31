@@ -15,7 +15,7 @@ class manageusers {
   ##
   ## Setup OS dependencies
   ##
-  include manageusers::os-specific
+  include manageusers::osSpecific
 
   ##
   ## Accounts to create
